@@ -59,7 +59,7 @@ const SignUp = () => {
           .then(() => {
           console.log('user profile updated');
           })
-        .catch((error)=>console.log('user profile update error'))
+        .catch((error)=>console.log('user profile update error',error))
       })
       .catch((error) => setErroMessage(error.message));
     setSuccess(false)
@@ -118,10 +118,11 @@ const SignUp = () => {
                   type={showPassword ? "text" : "password"}
                   placeholder="password"
                   name="password"
+                  
                   className="input input-bordered"
                   required
                 />
-                <button
+                <button type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="btn btn-xs absolute right-4 top-12"
                 >
